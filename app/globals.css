@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; background: #0b0f14; color: #e5f0ff; }
+
+.hud {
+  position: fixed; inset: 0; pointer-events: none; display: flex; flex-direction: column; justify-content: space-between; padding: 16px;
+}
+.hud .top { display: flex; gap: 16px; align-items: center; }
+.hud .pill { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 999px; font-weight: 600; letter-spacing: 0.3px; }
+.hud .bottom { display: flex; justify-content: center; padding-bottom: 24px; }
+.crosshair { position: fixed; left: 50%; top: 50%; width: 18px; height: 18px; transform: translate(-50%, -50%); pointer-events: none; }
+.crosshair:before, .crosshair:after { content: ''; position: absolute; background: #b7d3ff; }
+.crosshair:before { left: 8px; top: 0; width: 2px; height: 18px; }
+.crosshair:after { top: 8px; left: 0; width: 18px; height: 2px; }
+
+.overlay {
+  position: fixed; inset: 0; backdrop-filter: blur(6px); background: rgba(6,10,14,0.55); display: grid; place-items: center; text-align: center;
+}
+.overlay .panel { background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px 28px; max-width: 640px; }
+.overlay h1 { margin: 0 0 12px 0; font-size: 28px; }
+.overlay p { margin: 8px 0; color: #c7dbff; }
+.overlay kbd { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.12); font-weight: 600; }
+.overlay .btn { display: inline-block; margin-top: 16px; background: #2563eb; color: white; border: none; border-radius: 10px; padding: 10px 14px; font-weight: 700; letter-spacing: 0.3px; cursor: pointer; pointer-events: auto; }
+.overlay .btn:hover { background: #1d4ed8; }
+
+.healthbar { width: 220px; height: 14px; border-radius: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); overflow: hidden; }
+.healthbar .fill { height: 100%; background: linear-gradient(90deg, #22c55e, #84cc16); }
+
+#game-container { position: fixed; inset: 0; }
